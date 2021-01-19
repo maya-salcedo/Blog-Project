@@ -1,0 +1,16 @@
+<%- include("partials/header"); -%>
+
+<h1>Home</h1>
+
+<p> <%= homeContent %> </p>
+
+
+<%    posts.forEach(function(post){ %>
+<!-- no html output-->
+<h1><%=   post.title %></h1> <!-- with html output-->
+<p> <%= post.body.substring(0, 100) + "..." %> <!--to truncate the body-->
+<a href="/posts/<%=post.title%>">Read more</a> <!-- to get to the page in which there is only 1 title and 1 content each-->
+</p>
+<% }) %>
+
+<%- include("partials/footer"); -%>
